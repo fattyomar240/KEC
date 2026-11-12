@@ -139,10 +139,10 @@ to the correct business email, complete any email verification it requests, and
 send a test enquiry from the deployed site. The Formspree form ID is used by the
 public website and is not a private API key.
 
-The site uses hash-based routes, so page URLs look like `/#/about`,
-`/#/services`, `/#/projects`, and `/#/contact`. The browser keeps the route
-after the `#` on the client, so refreshing these pages works on static hosting
-without configuring an SPA rewrite or fallback.
+The site uses clean browser routes such as `/about`, `/services`, `/projects`,
+and `/contact`. The `vercel.json` rewrite serves `index.html` for page routes,
+so directly opening or refreshing these URLs works on Vercel. Other static
+hosts may need their own SPA rewrite or fallback configuration.
 
 To preview a production build on your computer, run:
 
