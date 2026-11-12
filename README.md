@@ -139,9 +139,10 @@ to the correct business email, complete any email verification it requests, and
 send a test enquiry from the deployed site. The Formspree form ID is used by the
 public website and is not a private API key.
 
-Because this site uses browser-based routes, configure the hosting provider to
-serve `index.html` for unknown page paths (an SPA rewrite/fallback). This makes
-direct links such as `/about` and `/contact` work when opened or refreshed.
+The site uses hash-based routes, so page URLs look like `/#/about`,
+`/#/services`, `/#/projects`, and `/#/contact`. The browser keeps the route
+after the `#` on the client, so refreshing these pages works on static hosting
+without configuring an SPA rewrite or fallback.
 
 To preview a production build on your computer, run:
 
